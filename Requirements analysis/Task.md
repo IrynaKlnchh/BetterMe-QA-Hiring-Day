@@ -1,67 +1,82 @@
-# Аналіз вимог і написання тест кейсів до задачі 
-***Завдання:*** Учасники мають проаналізувати мобільний додаток і виходячи з результатів сформувати список тест кейсів, який би включав перевірки існуючого функціонала з інтеграцією нової фічі. 
+Test Case № 1:
+Title: Verify navigation to the Trainings Tab from Personal Plan
+Preconditions: Open the app.
+Steps:
+1. Go to the Personal Plan screen.
+2. Tap on the Do Your Workout card.
+Expected Result: The user is navigated to the Trainings Tab.
 
-***Ключові кроки:***
+Test Case № 2:
+Title: Verify that Today’s Activity contains between 1 and 3 workouts
+Preconditions: Open the app.
+Steps:
+1. Navigate to the Trainings Tab.
+2. Check the Today’s Activity block.
+Expected Result: Today’s Activity block contains 1 to 3 recommended workouts based on the user’s selected activities.
 
-- Exploratory testing.
-- Аналіз вимог задачі.
-- Написання тест кейсів.
+Test Case № 3 (Negative):
+Title: Verify behavior when Today’s Activity block has 0 workouts
+Preconditions: Open the app.
+Steps:
+1. Go to the Personal Plan screen.
+2. Check if the Do Your Workout card is displayed.
+Expected Result: If the card is missing, the user should not be able to access the Trainings Tab through it.
 
-***Інструменти:***
+Test Case №4
+Title: Verify the correct subtitle for 1 chosen activity
+Preconditions: 
+1. Open the app
+Steps:
+1. Select one activity on the activity selection screen.
+2. Navigate to the Trainings Tab.
+Expected Result: The subtitle is: "Get daily workouts tailored to your goal and interest in [Chosen Activity #1]."
 
-- Мобільні емулятори (Android Studio), GitHub акаунт.
+Test Case №5
+Title: Verify the correct subtitle for 2 chosen activities
+Preconditions: 
+1. Open the app
+Steps:
+1. Select two activities on the activity selection screen.
+2. Navigate to the Trainings Tab.
+Expected Result: The subtitle is: "Get daily workouts tailored to your goal and interests in [Chosen Activity #1], [Chosen Activity #2]."
 
----
-# Завдання
+Test Case №6
+Title: Verify subtitle update when all workouts are completed
+Preconditions: Open the app.
+Steps:
+1. Complete all recommended workouts.
+2. Check the Recommended for You section.
+Expected Result: The subtitle updates to: "All workouts done! For an extra challenge, check out the workout library below."
 
-- Додаток можна завантажити за посиланням [Better Me](https://play.google.com/store/apps/details?id=com.gen.workoutme&hl=en)
+Test Case №7
+Title: Verify that the "Do Your Workout" card is marked as completed after all workouts are done
+Preconditions:
+1. Open the app.
+2. Navigate to the Personal Plan screen.
+Steps:
+Complete all recommended workouts.
+Expected Result: The Do Your Workout card is visually marked as completed.
 
-1. Провести exploratory testing функціоналу, який може стосуватися вимог задачі.
-2. Проаналізувати вимоги до задачі і написати тест кейс або тест кейси до задачі описаної нижче. 
+Test Case №8
+Title: Verify that the "Do Your Workout" card is clickable and redirects to the correct screen
+Preconditions: Open the app.
+Steps: Tap anywhere on the Do Your Workout card.
+Expected Result: The user is navigated to the Workout Preview Screen.
 
-***Задача:***
+Test Case №9 (Negative):
+Title: Verify behavior when no activities are selected 
+Preconditions: Open the app and don't select any activities.
+Steps: Navigate to the Trainings Tab.
+Expected Result: The Recommended for You section should be hidden or display a message like "No recommended workouts available."
 
-- При переході по картці Do Your Workout з Personal plan екрану користувач потрапляє в Trainings Tab
+Test Case №10 (Negative): 
+Title: Verify behavior when subtitle does not update after completing a workout	
+Preconditions: Open the app  
+Steps: 
+1. Complete one workout.
+2. Check the subtitle Recommended for You.
+Expected Result: The subtitle should correctly update to "Great job! [N] more workout left."
 
-![Design](https://github.com/AntonStroi/QA-Hackathon/blob/main/Requirements%20analysis%20/1.png)
-
-- В табі Trainings новий блок: Today’s Activity, в якому знаходяться від 1 до 3 рекомендованих тренувань, в залежності від кількості обраних користувачем activity на відповідному екрані
-
-![Design](https://github.com/AntonStroi/QA-Hackathon/blob/main/Requirements%20analysis%20/2.png)
-
-- Title - “Recommended for you”. Subtitle - “Get daily workouts tailored to your goal and interests in [Chosen Activity #1], [#2] and [#3].”
-
-- Якщо активності обрані тільки 2, пишемо 2, якщо тільки одна то відповідно пишемо interest (без множини): “Get daily workouts tailored to your goal and interest in [Chosen Activity #1].”
-
-![Design](https://github.com/AntonStroi/QA-Hackathon/blob/main/Requirements%20analysis%20/3.png)
-
-- Якщо користувач обрав 2 і більше рекомендованих activity
-   - При виконані 1 з них ми замінюємо Subtitle: “Great job! [N] more workout left” 
-   
-   ![Design](https://github.com/AntonStroi/QA-Hackathon/blob/main/Requirements%20analysis%20/4.png)
-
-   - При виконані всіх ми замінюємо Subtitle: “All workouts done! For an extra challenge, check out the workout library below”
-   
-   ![Design](https://github.com/AntonStroi/QA-Hackathon/blob/main/Requirements%20analysis%20/5.png)
-
-   - На екрані Personal plan відмічаємо картку Do Your Workout як виконану.
-- Вся область карточки клікабельна та переводить на Workout preview screen
-
-- ***Нотатка до завдання:*** Дизайн екрану з вибором activity
-
- ![Design](https://github.com/AntonStroi/QA-Hackathon/blob/main/Requirements%20analysis%20/6.jpeg)
-
-Рішення залити на github у папку ***Requirements analysis.*** В README написати тест кейси або тест кейси до задачі.
-
----
-
-# Help guide
-- Додаток можна завантажити за посиланням [Better Me](https://play.google.com/store/apps/details?id=com.gen.workoutme&hl=en)
-
-- Як створити репозиторій і залити туди рішення: [GitHub Docs](https://docs.github.com/en/repositories/creating-and-managing-repositories/creating-a-new-repository)
-
----
-
-# Успіхів!
-
----
+Уточнення: 
+1. Додати дизайн-макети Trainings Tab та блок "Today’s Activity"
+2. Чи можна змінити кількість обраних користувачем activity та їх типи? На якій вкладці?
